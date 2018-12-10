@@ -1,7 +1,31 @@
 <% include partials/header %>
 
-<a href="/resorts/new">Add New Resort</a>
 
-<h1>Resorts</h1>
+
+<div class="container">
+
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to Will's favorate resorts!</h1>
+            <p>View all resorts will visited</p>
+            <p>
+                <a class="btn btn-primary btn-sm" href="/resorts/new">Add New Resort</a>   
+            </p>
+        </div>
+    </header>
+    
+    
+    <div class="row text-center" style="flex-wrap: wrap">
+        <% resorts.forEach(function(resorts){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= resorts.image %>">
+                    <div class="caption">
+                        <h4><%= resorts.name %></h4>
+                    </div>
+                </div>
+            </div>
+        <% }); %> 
+    </div>
 
 <% include partials/footer %>
